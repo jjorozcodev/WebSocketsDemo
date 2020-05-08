@@ -1,11 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Microsoft.Web.WebSockets;
 
 namespace WebSocketDemoTime.WebSocketCode
 {
-    public class PoolWebSocket
+    public static class PoolWebSocket
     {
+        private static WebSocketCollection clients;
+
+        static PoolWebSocket()
+        {
+            clients = new WebSocketCollection();
+        }
+
+        public static void AddClient(TimeWSHandler wsClient)
+        {
+            clients.Add(wsClient);
+        }
+
+        public static void RemoveClient(TimeWSHandler wsClient)
+        {
+            clients.Remove(wsClient);
+        }
     }
 }

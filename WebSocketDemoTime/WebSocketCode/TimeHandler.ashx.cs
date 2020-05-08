@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.Web.WebSockets;
 using System.Web;
 
 namespace WebSocketDemoTime.WebSocketCode
 {
-    /// <summary>
-    /// Summary description for TimeHandler
-    /// </summary>
     public class TimeHandler : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
         {
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
+            if (context.IsWebSocketRequest)
+            {
+                context.AcceptWebSocketRequest(new TimeWSHandler());
+            }
         }
 
         public bool IsReusable
