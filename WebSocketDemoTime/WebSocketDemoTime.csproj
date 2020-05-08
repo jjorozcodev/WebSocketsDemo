@@ -76,13 +76,14 @@
     <Content Include="Scripts\jquery-3.5.1.min.js" />
     <Content Include="Scripts\jquery-3.5.1.slim.js" />
     <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="Scripts\TimeScript.js" />
     <Content Include="Web.config" />
-    <Content Include="WebSocketCode\TimeHandler.ashx" />
+    <Content Include="TimeHandler.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebSocketCode\PoolWebSocket.cs" />
-    <Compile Include="WebSocketCode\TimeHandler.ashx.cs">
+    <Compile Include="TimeHandler.ashx.cs">
       <DependentUpon>TimeHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="WebSocketCode\TimeWSHandler.cs" />
